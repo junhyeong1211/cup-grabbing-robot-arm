@@ -22,7 +22,7 @@ YOLO는 카메라 이미지 속에서 컵이 어느 픽셀 `(u,v)`에 있는지,
 
 * **RGB 이미지:** 사람이 보는 것과 같은 일반적인 컬러 이미지. **"What"** 을 인식하는 데 사용된다. 
 * **Depth Map:** 각 픽셀까지의 거리를 회색조로 표현한 이미지. 보통 밝을수록 가깝거나, 어두울수록 가깝게 설정된다. **"Where"** 를 알아내는 데 사용된다.
-
+* [RGB-D 카메라/Depth map 개념(스테레오/ToF/구조광 차이)](https://www.edge-ai-vision.com/2025/04/understanding-3d-camera-technologies-stereo-vision-structured-light-and-time-of-flight/?utm_source=chatgpt.com)
 
 
 이 깊이 정보를 얻는 대표적인 기술에는 아래와 같은 것들이 있다.
