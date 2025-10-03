@@ -68,6 +68,7 @@ YOLO는 카메라 이미지 속에서 컵이 어느 픽셀 `(u,v)`에 있는지,
     > $Y_c = \dfrac{(v - c_y) \cdot Z}{f_y}$
     >
     > $Z_c = Z$
+  
 *[참고자료: Pinhole Camera Model](https://en.wikipedia.org/wiki/Pinhole_camera_model?utm_source=chatgpt.com)
 ### ⑤ [실시간] 좌표계 변환
 * ④에서 얻은 카메라 기준 3D 좌표 `(Xc, Yc, Zc)`에 **외부 파라미터(R, T)** 를 적용해 **로봇 기준**의 최종 3D 좌표 `(Xr, Yr, Zr)`로 변환한다.
