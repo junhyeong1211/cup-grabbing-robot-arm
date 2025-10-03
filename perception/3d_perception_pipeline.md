@@ -39,7 +39,7 @@ YOLO는 카메라 이미지 속에서 컵이 어느 픽셀 `(u,v)`에 있는지,
 2.  **외부 파라미터 (Extrinsic Parameters, R, T):** 로봇이나 세상의 원점 대비 카메라가 **어디에 어떤 방향으로 놓여있는지**에 대한 정보. (회전 R, 평행이동 T)
 3.  **왜곡 계수 (Distortion Coefficients):** 렌즈의 불완전함 때문에 발생하는 이미지 왜곡을 보정하기 위한 값.
 
-> **Intrinsics는 '카메라의 스펙'이고, Extrinsics는 '카메라의 GPS와 나침반'이다.**
+> **Intrinsics는 카메라 자체의 광학적 특성이고 Extrinsics는 카메라의 위치와 자세 정보이다.**
 
 ---
 
