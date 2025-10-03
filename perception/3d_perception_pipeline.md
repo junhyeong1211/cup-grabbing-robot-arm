@@ -29,11 +29,11 @@ YOLO는 카메라 이미지 속에서 컵이 어느 픽셀 `(u,v)`에 있는지,
 * **스테레오 비전 (Stereo Vision):** 두 개의 카메라(사람의 두 눈처럼)를 이용해 시차를 계산하고, 삼각측량법으로 거리를 추정한다.
 * **구조광 (Structured Light):** 특정 패턴의 적외선을 쏘고 물체 표면에서 패턴이 왜곡되는 정도를 분석하여 거리를 계산한다.
 * **ToF (Time-of-Flight):** 빛을 쏘아 보낸 뒤 물체에 맞고 되돌아오는 시간을 직접 측정하여 거리를 계산한다.
-(자세한 내용: [e-con Systems 블로그](https://www.e-consystems.com/blog/camera/ko/technology-ko/what-are-depth-sensing-cameras-how-do-they-works/))
+* (자세한 내용: [e-con Systems 블로그](https://www.e-consystems.com/blog/camera/ko/technology-ko/what-are-depth-sensing-cameras-how-do-they-works/))
 
 ### 2.2. 카메라 캘리브레이션과 파라미터
 
-2D 픽셀 좌표와 3D 공간 좌표를 변환하기 위해서는, 카메라의 고유한 '수학적 정보'가 필요하다. 이 정보는 **카메라 캘리브레이션(Camera Calibration)**을 통해 얻을 수 있는데 크게 세 가지로 나뉜다.
+2D 픽셀 좌표와 3D 공간 좌표를 변환하기 위해서는, 카메라의 고유한 '수학적 정보'가 필요하다. 이 정보는 **카메라 캘리브레이션(Camera Calibration)** 을 통해 얻을 수 있는데 크게 세 가지로 나뉜다.
 
 1.  **내부 파라미터 (Intrinsic Parameters, K):** 카메라 렌즈와 센서 자체의 고유한 특성. (초점 거리 $f_x, f_y$ 와 주점 $c_x, c_y$ 등)
 2.  **외부 파라미터 (Extrinsic Parameters, R, T):** 로봇이나 세상의 원점 대비 카메라가 **어디에 어떤 방향으로 놓여있는지**에 대한 정보. (회전 R, 평행이동 T)
