@@ -99,7 +99,7 @@
         total_reward = reward_reaching + reward_grasp + reward_time + reward_fail
         return total_reward
     ```
-참고: [Pseudo-code](https://ko.wikipedia.org/wiki/%EC%9D%98%EC%82%AC%EC%BD%94%EB%93%9C)
+    참고: [Pseudo-code](https://ko.wikipedia.org/wiki/%EC%9D%98%EC%82%AC%EC%BD%94%EB%93%9C)
 ---
 
 ## 3. 전체 학습 흐름 
