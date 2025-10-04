@@ -70,7 +70,7 @@
         gripper_force # 그리퍼를 쥘지(1) 놓을지(-1)
     ]
     ```
-
+[OpCartesian coordinates](https://wikidocs.net/257243)
 ### ⑤ Reward: The Feedback
 
 * **정의:** 에이전트의 행동이 얼마나 좋았는지를 평가하는 점수. 보상 함수를 어떻게 설계하느냐가 학습의 성패를 좌우합니다.
