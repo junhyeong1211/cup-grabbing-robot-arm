@@ -26,6 +26,7 @@ viewMatrix = p.computeViewMatrix(
     cameraTargetPosition=[0, 0, 0.7], # 카메라가 바라볼 지점
     cameraUpVector=[0, 0, 1]          # 카메라의 위쪽 방향
 )
+```
 ---
 
 ## 2. URDF: 로봇의 디지털 설계도
