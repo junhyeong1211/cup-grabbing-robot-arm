@@ -54,7 +54,7 @@ PyBullet은 역기구학이라는 어려운 문제를 해결해준다. 오늘 �
 
 오늘 배운 역기구학(IK) 방식은 목표 지점에 대한 '정답' 관절 각도를 수학적으로 계산하는 **정교한 제어 방식**이다.
 
-하지만 "End-to-End Training of Deep Visuomotor Policies" 논문은 전혀 다른 접근법을 제시한다.
+하지만 ["End-to-End Training of Deep Visuomotor Policies"](https://arxiv.org/pdf/1504.00702) 논문은 전혀 다른 접근법을 제시한다.
 
 > 카메라 이미지(Vision)를 입력받아, 중간의 복잡한 IK 계산 없이 곧바로 모터 제어 명령을 출력하는 **하나의 거대한 신경망**을 만들 수 있다는 것이다.
 
