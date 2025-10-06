@@ -15,7 +15,7 @@
 ### 2.1. 순기구학 (Forward Kinematics, FK): "관절 각도를 알 때, 손끝은 어디에 있는가?"
 
 * **개념:** 로봇의 각 관절 각도($\theta_1, \theta_2, ...$)가 주어졌을 때, 로봇팔의 End-Effector이 최종적으로 어떤 3D 위치와 방향을 갖게 되는지 계산하는 과정.
-* **원리:** 베이스부터 각 관절을 거쳐 손끝까지, 이웃한 좌표계 사이의 관계를 나타내는 **[4x4 변환 행렬(Transformation Matrix)]**(https://goeden.tistory.com/27) 을 순서대로 계속 곱해나가는 단순한 계산 문제다.
+* **원리:** 베이스부터 각 관절을 거쳐 손끝까지, 이웃한 좌표계 사이의 관계를 나타내는 **[4x4 변환 행렬(Transformation Matrix)](https://goeden.tistory.com/27)** 을 순서대로 계속 곱해나가는 단순한 계산 문제다.
     > $T_{base \to hand} = T_{base \to 1} \times T_{1 \to 2} \times \dots \times T_{6 \to hand}$
 * **우리 프로젝트에서의 역할:** 주로 결과를 **검증**하는 용도로 사용된다. 예를 들어, 역기구학으로 로봇을 움직인 뒤 `p.getLinkState()` 함수를 호출하여 실제로 손끝이 목표 지점에 도달했는지 확인할 때 쓰인다.
 
