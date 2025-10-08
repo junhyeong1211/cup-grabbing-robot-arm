@@ -4,7 +4,7 @@
   "metadata": {
     "colab": {
       "provenance": [],
-      "authorship_tag": "ABX9TyPCwPjjq8RL2U6lyUu2IwJT"
+      "authorship_tag": "ABX9TyNf7V+PSYBin65LxFxUg3PP"
     },
     "kernelspec": {
       "name": "python3",
@@ -18,7 +18,8 @@
     {
       "cell_type": "code",
       "source": [
-        "!pip install gymnasium pybullet"
+        "!pip install gymnasium pybullet\n",
+        "!pip install gymnasium pybullet stable-baselines3[extra]"
       ],
       "metadata": {
         "colab": {
@@ -65,21 +66,6 @@
     {
       "cell_type": "code",
       "source": [
-        "# --- 1. 라이브러리 설치 및 임포트 ---\n",
-        "!pip install gymnasium pybullet stable-baselines3[extra]\n",
-        "\n",
-        "import gymnasium as gym\n",
-        "from gymnasium import spaces\n",
-        "import numpy as np\n",
-        "import pybullet as p\n",
-        "import pybullet_data\n",
-        "import time\n",
-        "from stable_baselines3 import PPO\n",
-        "from stable_baselines3.common.callbacks import CheckpointCallback\n",
-        "import matplotlib.pyplot as plt\n",
-        "from IPython.display import clear_output\n",
-        "\n",
-        "# --- 2. 맞춤형 Gym 환경 클래스 정의 ---\n",
         "class CupGraspingEnv(gym.Env):\n",
         "    def __init__(self):\n",
         "        super(CupGraspingEnv, self).__init__()\n",
@@ -99,7 +85,7 @@
         "        self.cupId = None\n",
         "        self.end_effector_index = 6\n",
         "        self.distance_to_cup = 0\n",
-        "        self.max_steps_per_episode = 200\n",
+        "        self.max_steps_per_episode = 500 #200번 부족해서 500번으로 늘림\n",
         "        self.step_counter = 0\n",
         "        print(\"맞춤형 Gym 환경이 생성되었습니다!\")\n",
         "\n",
@@ -169,25 +155,12 @@
         "        if new_distance < 0.05:\n",
         "            reward += 5000\n",
         "\n",
-        "        # AI가 실패를 두려워하지 않고 과감하게 탐험하도록 허용\n",
-        "        # cup_pos, cup_orn = p.getBasePositionAndOrientation(self.cupId)\n",
-        "        # cup_euler = p.getEulerFromQuaternion(cup_orn)\n",
-        "        # if abs(cup_euler[0]) > 0.5 or abs(cup_euler[1]) > 0.5:\n",
-        "        #     reward -= 500\n",
-        "\n",
         "        return reward\n",
         "\n",
         "    def _check_done(self):\n",
         "        if self.distance_to_cup < 0.05:\n",
         "            print(\"성공! 컵에 도달했습니다.\")\n",
         "            return True\n",
-        "\n",
-        "        # 실패 페널티를 주석 처리했으므로, 실패 종료 조건도 잠시 함께 주석 처리\n",
-        "        # cup_pos, cup_orn = p.getBasePositionAndOrientation(self.cupId)\n",
-        "        # cup_euler = p.getEulerFromQuaternion(cup_orn)\n",
-        "        # if abs(cup_euler[0]) > 0.5 or abs(cup_euler[1]) > 0.5:\n",
-        "        #     print(\"실패! 컵을 넘어뜨렸습니다.\")\n",
-        "        #     return True\n",
         "\n",
         "        self.step_counter += 1\n",
         "        if self.step_counter > self.max_steps_per_episode:\n",
@@ -205,7 +178,7 @@
         "        if self.client >= 0:\n",
         "            p.disconnect(self.client)\n",
         "            self.client = -1\n",
-        "        print(\"PyBullet 시뮬레이션 연결이 종료되었습니다.\")"
+        "        print(\"PyBullet 시뮬레이션 연결이 종료되었습니다.\")\n"
       ],
       "metadata": {
         "id": "u_DbfCUuo7zt"
