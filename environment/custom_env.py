@@ -33,7 +33,7 @@ class CupGraspingEnv(gym.Env):
         self.step_counter = 0
         p.resetSimulation(physicsClientId=self.client)
         p.setGravity(0, 0, -9.8)
-
+        self.planeId = p.loadURDF("plane.urdf")
         p.loadURDF("plane.urdf")
         self.robotId = p.loadURDF("franka_panda/panda.urdf", [0, 0, 0], useFixedBase=True)
 
