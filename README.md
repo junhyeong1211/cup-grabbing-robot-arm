@@ -1,4 +1,5 @@
-![성공 GIF](randomize_success_episode.gif)
+![성공 GIF](cup_grasping_L1_RP_success.gif)
+![성공 GIF](cup_grasping_L2_DR_success.gif)
 # 컵을 스스로 찾아 잡는 로봇팔 만들기 프로젝트
 
 ## 1. 프로젝트 목표 
